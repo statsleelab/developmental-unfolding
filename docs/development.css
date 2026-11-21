@@ -1,0 +1,64 @@
+.development-report h1 {
+  max-width: 11ch;
+  font-size: clamp(2.9rem, 6.5vw, 5.9rem);
+  text-wrap: balance;
+}
+
+.development-grid, .development-sidebar {
+  display: grid;
+  gap: 1rem;
+}
+
+.development-grid { margin-top: 1rem; align-items: start; }
+.growth-card, .learning-card { margin: 0; min-width: 0; }
+.growth-card { --uncommitted: #65716a; --excitatory: #24725e; --inhibitory: #a0522d; }
+.growth-card figcaption { min-height: 2.9em; }
+
+.fate-mark {
+  width: .7rem;
+  height: .7rem;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.fate-mark.uncommitted { border-radius: 50%; border: 2px solid var(--uncommitted); }
+.fate-mark.excitatory { border-radius: 50%; background: var(--excitatory); }
+.fate-mark.inhibitory { transform: rotate(45deg) scale(.76); background: var(--inhibitory); }
+
+#growth-canvas {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: .35rem;
+  margin: .95rem auto .2rem;
+  background: #eef0e7;
+}
+
+.growth-control { grid-template-columns: minmax(0, 1fr) auto; gap: 0 .5rem; }
+.growth-control output { text-align: end; }
+.growth-control input { grid-column: 1 / -1; min-height: 2.75rem; }
+.development-section-intro { max-width: 42rem; margin-top: .8rem; color: var(--muted); }
+.development-values dd { font-size: .78rem; }
+.development-values dd span { display: block; color: var(--muted); }
+
+.learning-figure {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: .85rem;
+  border-radius: .2rem;
+}
+
+.learning-card td { white-space: normal; }
+.learning-card td span { display: block; color: var(--muted); }
+
+@media (min-width: 48rem) {
+  .development-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+  .growth-card figcaption { min-height: 0; }
+}
+
+@media (min-width: 60rem) {
+  .development-grid { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+}

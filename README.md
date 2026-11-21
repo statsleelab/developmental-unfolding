@@ -1,6 +1,17 @@
 # Developmental Unfolding
 
-Can activity-dependent pruning during development improve the temporal memory of a frozen recurrent network? This synthetic experiment starts from one artificial cell and compares activity-based edge selection with two resource-matched controls.
+Can a compact, shared developmental program grow circuitry with reproducible spatial order and useful computational priors? The project uses abstract cell states, signed connections, and local interactions on a 2D lattice. It is genome-inspired. The simulator uses synthetic data and rules throughout.
+
+## Local differentiation and developmental wiring
+
+One uncommitted cell expands into neighboring vacancies. A bounded internal regulator receives signals from its four immediate neighbors. Positive feedback and a commitment threshold produce two model cell types. Committed cells form nearby signed connections throughout growth under a local degree limit. Edge activity traces determine whether older weakly used edges are pruned. The simulation records the progression from one cell through commitment and wiring.
+
+- **Spatial order.** Compare the proportion of same-type pairs at Manhattan distances 3–7 with the expectation after shuffling types within birth-cohort and boundary strata. Repeat with neighbor signaling disabled while preserving the exact growth trajectory. Pilot exploration adjusted neighbor coupling and regulator noise to permit both types to coexist. Separate evaluation seeds use the resulting fixed rule.
+- **Learning efficiency.** Compare developmental wiring to direct wiring drawn at maturity on exactly the same positions and cell types. Each source has the same number of outgoing edges at each distance and the two conditions share signed weights, connection preferences, input ports, and trial streams. A frozen circuit receives two cues in sequence. A ridge readout fitted to non-input cell states predicts their order six steps after the second cue. Balanced, nested label budgets range from 16 to 256. Separate test trials evaluate every budget. The primary difference averages test accuracy over the log₂ label budget. The analysis resamples growth seeds for paired intervals.
+
+Across 32 evaluation seeds, the neighbor signal changed same-type pair enrichment by **+0.66 percentage points** (95% bootstrap interval −0.15 to +1.52). The normalized learning-curve area changed by **−0.38 percentage points** (−1.70 to +1.00) relative to direct wiring. At 256 labels, test accuracy was **83.3%** with developmental wiring, **84.1%** with direct wiring, and **50.1%** with recurrence removed. Both primary intervals include zero. [Development experiment](https://statsleelab.github.io/developmental-unfolding/development.html)
+
+The next research stage defines which synthetic predictions can be evaluated against processed developmental atlases, then uses held-out donors and age-aware baselines. [Biological validation roadmap](BIOLOGICAL_VALIDATION.md)
 
 ## Reproduce the experiment
 
@@ -11,13 +22,14 @@ python -m venv .venv
 . .venv/bin/activate
 python -m pip install -r requirements.txt
 OPENBLAS_NUM_THREADS=1 python -m unittest discover -s tests -v
+OPENBLAS_NUM_THREADS=1 python development_experiment.py
 OPENBLAS_NUM_THREADS=1 python experiment.py
 python -m http.server 8080 --directory docs
 ```
 
-The report is available at `http://localhost:8080`. To reproduce the pilot on its own, run `python experiment.py --pilot-only --output pilot-output`. The complete run writes the study summary, delay-level seed results, and a publication-resolution figure to [`docs/`](docs/). The static site can be served from the `main` branch and `/docs` folder on GitHub Pages.
+The development experiment is available at `http://localhost:8080/development.html`. The earlier memory experiment is available at `http://localhost:8080/`. Each complete run writes individual seed results, summaries, and a figure to [`docs/`](docs/). Run `python development_experiment.py --pilot-only` for the local-rule pilot or `python experiment.py --pilot-only --output pilot-output` for the original memory pilot. GitHub Pages uses `main` and `/docs`.
 
-## Experimental protocol
+## Earlier activity-pruning experiment
 
 1. Grow a 256-node colony from one lattice location. Each division fills an empty orthogonal neighbor of a randomly selected frontier node. Assign excitatory or inhibitory signs with probabilities 0.8 and 0.2. A directed candidate edge can join any two occupied sites up to √8 lattice units apart.
 2. Give the pre-pruning graph 512 steps of independent Gaussian drive at every node as a model of spontaneous activity. For each candidate connection, calculate the absolute correlation of the source state at step *t* and the target state at step *t* + 1. Each source ranks its own edges within each exact squared-distance group and retains half, rounded down with a minimum of one per group.
