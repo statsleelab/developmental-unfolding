@@ -1,0 +1,429 @@
+{
+  "coverage": [
+    {
+      "specimen": "Dataset1",
+      "neurons": 180,
+      "mapped_neurons": 87,
+      "contact_candidates": 8564,
+      "retained_candidates": 2524,
+      "positive_at_contacts": 675,
+      "retained_positives": 280,
+      "positives_outside_contacts": 0
+    },
+    {
+      "specimen": "Dataset2",
+      "neurons": 180,
+      "mapped_neurons": 87,
+      "contact_candidates": 8428,
+      "retained_candidates": 2472,
+      "positive_at_contacts": 865,
+      "retained_positives": 333,
+      "positives_outside_contacts": 0
+    },
+    {
+      "specimen": "Dataset3",
+      "neurons": 180,
+      "mapped_neurons": 87,
+      "contact_candidates": 8790,
+      "retained_candidates": 2596,
+      "positive_at_contacts": 887,
+      "retained_positives": 352,
+      "positives_outside_contacts": 0
+    },
+    {
+      "specimen": "Dataset4",
+      "neurons": 180,
+      "mapped_neurons": 87,
+      "contact_candidates": 9264,
+      "retained_candidates": 2654,
+      "positive_at_contacts": 1009,
+      "retained_positives": 406,
+      "positives_outside_contacts": 2
+    },
+    {
+      "specimen": "Dataset5",
+      "neurons": 180,
+      "mapped_neurons": 87,
+      "contact_candidates": 10472,
+      "retained_candidates": 2902,
+      "positive_at_contacts": 1323,
+      "retained_positives": 491,
+      "positives_outside_contacts": 1
+    },
+    {
+      "specimen": "Dataset6",
+      "neurons": 180,
+      "mapped_neurons": 87,
+      "contact_candidates": 10058,
+      "retained_candidates": 2722,
+      "positive_at_contacts": 1314,
+      "retained_positives": 467,
+      "positives_outside_contacts": 0
+    },
+    {
+      "specimen": "Dataset8",
+      "neurons": 180,
+      "mapped_neurons": 87,
+      "contact_candidates": 11182,
+      "retained_candidates": 2862,
+      "positive_at_contacts": 1932,
+      "retained_positives": 658,
+      "positives_outside_contacts": 1
+    }
+  ],
+  "matched_neurons": 87,
+  "expression_profiles": 47,
+  "expression_cells": 5133,
+  "results": {
+    "held_specimen": {
+      "specimens": [
+        {
+          "specimen": "Dataset1",
+          "candidate_count": 2524,
+          "prevalence": 0.1109350237717908,
+          "scores": {
+            "contact": {
+              "ap": 0.43621143269591606,
+              "auc": 0.859865991851286,
+              "log_loss": 0.2568121069200433
+            },
+            "type": {
+              "ap": 0.490359879223529,
+              "auc": 0.8751878023936848,
+              "log_loss": 0.244719710778283
+            },
+            "expression": {
+              "ap": 0.5518279941687986,
+              "auc": 0.8844808377896614,
+              "log_loss": 0.23510812097665285
+            }
+          }
+        },
+        {
+          "specimen": "Dataset2",
+          "candidate_count": 2472,
+          "prevalence": 0.13470873786407767,
+          "scores": {
+            "contact": {
+              "ap": 0.46366168118447365,
+              "auc": 0.8291348852358671,
+              "log_loss": 0.3180583136796878
+            },
+            "type": {
+              "ap": 0.517877385191037,
+              "auc": 0.8514054025975485,
+              "log_loss": 0.30266332360249165
+            },
+            "expression": {
+              "ap": 0.5682996753594697,
+              "auc": 0.8598261655765163,
+              "log_loss": 0.2972083285638863
+            }
+          }
+        },
+        {
+          "specimen": "Dataset3",
+          "candidate_count": 2596,
+          "prevalence": 0.13559322033898305,
+          "scores": {
+            "contact": {
+              "ap": 0.4654991490240942,
+              "auc": 0.8474492586290714,
+              "log_loss": 0.3002991577539189
+            },
+            "type": {
+              "ap": 0.518461339836575,
+              "auc": 0.8680977556311782,
+              "log_loss": 0.28431278286543005
+            },
+            "expression": {
+              "ap": 0.5640977379529845,
+              "auc": 0.8788727009398801,
+              "log_loss": 0.2746778150208983
+            }
+          }
+        },
+        {
+          "specimen": "Dataset4",
+          "candidate_count": 2654,
+          "prevalence": 0.15297663903541825,
+          "scores": {
+            "contact": {
+              "ap": 0.5146994256302144,
+              "auc": 0.843199428501306,
+              "log_loss": 0.3281712128871342
+            },
+            "type": {
+              "ap": 0.5358721297741883,
+              "auc": 0.863387050120085,
+              "log_loss": 0.3129723876439761
+            },
+            "expression": {
+              "ap": 0.5974898090694314,
+              "auc": 0.876537217537647,
+              "log_loss": 0.30051333468886343
+            }
+          }
+        },
+        {
+          "specimen": "Dataset5",
+          "candidate_count": 2902,
+          "prevalence": 0.1691936595451413,
+          "scores": {
+            "contact": {
+              "ap": 0.5617964458594084,
+              "auc": 0.8557147696276655,
+              "log_loss": 0.3259482759470713
+            },
+            "type": {
+              "ap": 0.6098496652387354,
+              "auc": 0.8764792393316106,
+              "log_loss": 0.30628292988158945
+            },
+            "expression": {
+              "ap": 0.6464548620599168,
+              "auc": 0.8828705162438619,
+              "log_loss": 0.2975707258330595
+            }
+          }
+        },
+        {
+          "specimen": "Dataset6",
+          "candidate_count": 2722,
+          "prevalence": 0.17156502571638502,
+          "scores": {
+            "contact": {
+              "ap": 0.5094420825723444,
+              "auc": 0.8346781124030824,
+              "log_loss": 0.3508167401595599
+            },
+            "type": {
+              "ap": 0.5890699824644868,
+              "auc": 0.8612960967063438,
+              "log_loss": 0.32668555287237183
+            },
+            "expression": {
+              "ap": 0.6452581306432006,
+              "auc": 0.8703343034987678,
+              "log_loss": 0.31550566450519585
+            }
+          }
+        },
+        {
+          "specimen": "Dataset8",
+          "candidate_count": 2862,
+          "prevalence": 0.22990915443745633,
+          "scores": {
+            "contact": {
+              "ap": 0.6158559361363904,
+              "auc": 0.8401676421427744,
+              "log_loss": 0.39444548127258866
+            },
+            "type": {
+              "ap": 0.6512610069475163,
+              "auc": 0.8592259721203229,
+              "log_loss": 0.3757439748926167
+            },
+            "expression": {
+              "ap": 0.6792913195333963,
+              "auc": 0.8675218861533879,
+              "log_loss": 0.3655778198900069
+            }
+          }
+        }
+      ],
+      "mean": {
+        "contact": {
+          "ap": 0.5095951647289774,
+          "auc": 0.8443157269130076,
+          "log_loss": 0.3249358983742863
+        },
+        "type": {
+          "ap": 0.5589644840965812,
+          "auc": 0.8650113312715391,
+          "log_loss": 0.3076258089338227
+        },
+        "expression": {
+          "ap": 0.607531361255314,
+          "auc": 0.8743490896771033,
+          "log_loss": 0.2980231156397948
+        }
+      }
+    },
+    "held_specimen_and_subtype_pair": {
+      "specimens": [
+        {
+          "specimen": "Dataset1",
+          "candidate_count": 2524,
+          "prevalence": 0.1109350237717908,
+          "scores": {
+            "contact": {
+              "ap": 0.43413981015101055,
+              "auc": 0.857917939903234,
+              "log_loss": 0.25791779982489194
+            },
+            "type": {
+              "ap": 0.4578464140214233,
+              "auc": 0.8620989304812834,
+              "log_loss": 0.2553570234199092
+            },
+            "expression": {
+              "ap": 0.4929366973602892,
+              "auc": 0.8644050802139037,
+              "log_loss": 0.251351943138912
+            }
+          }
+        },
+        {
+          "specimen": "Dataset2",
+          "candidate_count": 2472,
+          "prevalence": 0.13470873786407767,
+          "scores": {
+            "contact": {
+              "ap": 0.4594100381557146,
+              "auc": 0.828480654567611,
+              "log_loss": 0.31828233492446334
+            },
+            "type": {
+              "ap": 0.4793133111566734,
+              "auc": 0.8384134485116252,
+              "log_loss": 0.31513009018326554
+            },
+            "expression": {
+              "ap": 0.5078112859387589,
+              "auc": 0.8407004479935757,
+              "log_loss": 0.31416422593281174
+            }
+          }
+        },
+        {
+          "specimen": "Dataset3",
+          "candidate_count": 2596,
+          "prevalence": 0.13559322033898305,
+          "scores": {
+            "contact": {
+              "ap": 0.46012165556509554,
+              "auc": 0.8454742950899368,
+              "log_loss": 0.3016095058141441
+            },
+            "type": {
+              "ap": 0.48249211391847735,
+              "auc": 0.853633679711554,
+              "log_loss": 0.29699669348002017
+            },
+            "expression": {
+              "ap": 0.5108664340055065,
+              "auc": 0.8587521268838114,
+              "log_loss": 0.29370182817771984
+            }
+          }
+        },
+        {
+          "specimen": "Dataset4",
+          "candidate_count": 2654,
+          "prevalence": 0.15297663903541825,
+          "scores": {
+            "contact": {
+              "ap": 0.5101923847515433,
+              "auc": 0.8419558490962958,
+              "log_loss": 0.3295434656718371
+            },
+            "type": {
+              "ap": 0.4993448539147697,
+              "auc": 0.8501645688340375,
+              "log_loss": 0.3255352722660161
+            },
+            "expression": {
+              "ap": 0.5396660160702813,
+              "auc": 0.8559244780253492,
+              "log_loss": 0.3219955116490076
+            }
+          }
+        },
+        {
+          "specimen": "Dataset5",
+          "candidate_count": 2902,
+          "prevalence": 0.1691936595451413,
+          "scores": {
+            "contact": {
+              "ap": 0.5580659984364302,
+              "auc": 0.8542373253612728,
+              "log_loss": 0.32720590429331925
+            },
+            "type": {
+              "ap": 0.5750769272118841,
+              "auc": 0.863080027808728,
+              "log_loss": 0.31984135338517455
+            },
+            "expression": {
+              "ap": 0.5926506003121251,
+              "auc": 0.8619869386831063,
+              "log_loss": 0.32010903467572416
+            }
+          }
+        },
+        {
+          "specimen": "Dataset6",
+          "candidate_count": 2722,
+          "prevalence": 0.17156502571638502,
+          "scores": {
+            "contact": {
+              "ap": 0.5059401105658257,
+              "auc": 0.8336952857556608,
+              "log_loss": 0.351432885986387
+            },
+            "type": {
+              "ap": 0.5535447727495174,
+              "auc": 0.8503321194395513,
+              "log_loss": 0.339042412743204
+            },
+            "expression": {
+              "ap": 0.5923907613578709,
+              "auc": 0.8522768817331934,
+              "log_loss": 0.33538149519555976
+            }
+          }
+        },
+        {
+          "specimen": "Dataset8",
+          "candidate_count": 2862,
+          "prevalence": 0.22990915443745633,
+          "scores": {
+            "contact": {
+              "ap": 0.6122035715119147,
+              "auc": 0.8392815770166427,
+              "log_loss": 0.39531581028150503
+            },
+            "type": {
+              "ap": 0.6234140966402639,
+              "auc": 0.8510762415944484,
+              "log_loss": 0.38638329403310817
+            },
+            "expression": {
+              "ap": 0.6405462287649067,
+              "auc": 0.8534179358888785,
+              "log_loss": 0.38513387390916026
+            }
+          }
+        }
+      ],
+      "mean": {
+        "contact": {
+          "ap": 0.5057247955910763,
+          "auc": 0.843006132398665,
+          "log_loss": 0.32590110097093544
+        },
+        "type": {
+          "ap": 0.5244332128018584,
+          "auc": 0.852685573768747,
+          "log_loss": 0.31975516278724253
+        },
+        "expression": {
+          "ap": 0.5538382891156769,
+          "auc": 0.855351984203117,
+          "log_loss": 0.3174054160969851
+        }
+      }
+    }
+  }
+}

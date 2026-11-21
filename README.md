@@ -2,6 +2,10 @@
 
 Can a compact, shared developmental program grow circuitry with reproducible spatial order and useful computational priors? The project uses abstract cell states, signed connections, and local interactions on a 2D lattice. It is genome-inspired. The simulator uses synthetic data and rules throughout.
 
+## Predicting real connectome edges
+
+A held-out analysis asks whether late-embryonic gene expression improves the prediction of chemical synapses among physically touching *C. elegans* neurons. It compares the same regularized connection rule under contact-only, cell-type, and expression inputs. [Results](https://statsleelab.github.io/developmental-unfolding/connectome.html) · [Data and reproduction](CONNECTOME.md)
+
 ## Local differentiation and developmental wiring
 
 One uncommitted cell expands into neighboring vacancies. A bounded internal regulator receives signals from its four immediate neighbors. Positive feedback and a commitment threshold produce two model cell types. Committed cells form nearby signed connections throughout growth under a local degree limit. Edge activity traces determine whether older weakly used edges are pruned. The simulation records the progression from one cell through commitment and wiring.
