@@ -1,0 +1,767 @@
+{
+  "panel": {
+    "used": [
+      "syg-1",
+      "syg-2",
+      "unc-6",
+      "unc-40",
+      "clr-1",
+      "nrx-1",
+      "nlg-1",
+      "madd-4",
+      "bam-2",
+      "casy-1",
+      "sax-7",
+      "rig-6",
+      "sax-3",
+      "unc-5",
+      "rig-1",
+      "rig-3",
+      "ncam-1",
+      "cdh-4",
+      "ptp-3",
+      "cam-1"
+    ],
+    "dropped": []
+  },
+  "candidate_count": 18732,
+  "specimens": 7,
+  "expression_profiles": 47,
+  "results": {
+    "held_specimen": {
+      "specimens": [
+        {
+          "specimen": "Dataset1",
+          "scores": {
+            "baseline": {
+              "ap": 0.490359879223529,
+              "log_loss": 0.244719710778283
+            },
+            "named_main": {
+              "ap": 0.6147635503645178,
+              "log_loss": 0.21871202104472637
+            },
+            "named_pairs_5": {
+              "ap": 0.6301896985907934,
+              "log_loss": 0.2145779981514737
+            },
+            "named_pairs_10": {
+              "ap": 0.6347194585261078,
+              "log_loss": 0.2134525819719557
+            },
+            "named_pairs_20": {
+              "ap": 0.6366442697020587,
+              "log_loss": 0.21271305934298126
+            }
+          }
+        },
+        {
+          "specimen": "Dataset2",
+          "scores": {
+            "baseline": {
+              "ap": 0.517877385191037,
+              "log_loss": 0.30266332360249165
+            },
+            "named_main": {
+              "ap": 0.6062254661218488,
+              "log_loss": 0.26578173272284455
+            },
+            "named_pairs_5": {
+              "ap": 0.6261372887894896,
+              "log_loss": 0.2595516687035678
+            },
+            "named_pairs_10": {
+              "ap": 0.6295516417079117,
+              "log_loss": 0.2573898836191264
+            },
+            "named_pairs_20": {
+              "ap": 0.6248262104650706,
+              "log_loss": 0.2577263626246232
+            }
+          }
+        },
+        {
+          "specimen": "Dataset3",
+          "scores": {
+            "baseline": {
+              "ap": 0.518461339836575,
+              "log_loss": 0.28431278286543005
+            },
+            "named_main": {
+              "ap": 0.6176055639624894,
+              "log_loss": 0.2578775319565002
+            },
+            "named_pairs_5": {
+              "ap": 0.6269634608287787,
+              "log_loss": 0.25351430849906165
+            },
+            "named_pairs_10": {
+              "ap": 0.6309854491922925,
+              "log_loss": 0.25245840781473694
+            },
+            "named_pairs_20": {
+              "ap": 0.6355300683336624,
+              "log_loss": 0.25051047835656026
+            }
+          }
+        },
+        {
+          "specimen": "Dataset4",
+          "scores": {
+            "baseline": {
+              "ap": 0.5358721297741883,
+              "log_loss": 0.3129723876439761
+            },
+            "named_main": {
+              "ap": 0.6316182882066649,
+              "log_loss": 0.28136065836416074
+            },
+            "named_pairs_5": {
+              "ap": 0.6457807290344615,
+              "log_loss": 0.2772994480609922
+            },
+            "named_pairs_10": {
+              "ap": 0.6509635907053296,
+              "log_loss": 0.2752652560414686
+            },
+            "named_pairs_20": {
+              "ap": 0.6517595762599084,
+              "log_loss": 0.2745583321096739
+            }
+          }
+        },
+        {
+          "specimen": "Dataset5",
+          "scores": {
+            "baseline": {
+              "ap": 0.6098496652387354,
+              "log_loss": 0.30628292988158945
+            },
+            "named_main": {
+              "ap": 0.6810577763295672,
+              "log_loss": 0.2834128902806573
+            },
+            "named_pairs_5": {
+              "ap": 0.693627955271599,
+              "log_loss": 0.2793366396851625
+            },
+            "named_pairs_10": {
+              "ap": 0.6977513460729928,
+              "log_loss": 0.27758883690929903
+            },
+            "named_pairs_20": {
+              "ap": 0.7012888747664202,
+              "log_loss": 0.27642673000112017
+            }
+          }
+        },
+        {
+          "specimen": "Dataset6",
+          "scores": {
+            "baseline": {
+              "ap": 0.5890699824644868,
+              "log_loss": 0.32668555287237183
+            },
+            "named_main": {
+              "ap": 0.6804612849835352,
+              "log_loss": 0.2997427267255595
+            },
+            "named_pairs_5": {
+              "ap": 0.6984913565854358,
+              "log_loss": 0.294542899148258
+            },
+            "named_pairs_10": {
+              "ap": 0.7028126834028933,
+              "log_loss": 0.2925541235969925
+            },
+            "named_pairs_20": {
+              "ap": 0.7033674126131532,
+              "log_loss": 0.2906185721838392
+            }
+          }
+        },
+        {
+          "specimen": "Dataset8",
+          "scores": {
+            "baseline": {
+              "ap": 0.6512610069475163,
+              "log_loss": 0.3757439748926167
+            },
+            "named_main": {
+              "ap": 0.7190355319167107,
+              "log_loss": 0.3525344505325828
+            },
+            "named_pairs_5": {
+              "ap": 0.7291375812565257,
+              "log_loss": 0.3480138497725633
+            },
+            "named_pairs_10": {
+              "ap": 0.7310557709264635,
+              "log_loss": 0.34744919024898635
+            },
+            "named_pairs_20": {
+              "ap": 0.7329262406050088,
+              "log_loss": 0.3456406085232903
+            }
+          }
+        }
+      ],
+      "mean": {
+        "baseline": {
+          "ap": 0.5589644840965812,
+          "log_loss": 0.3076258089338227
+        },
+        "named_main": {
+          "ap": 0.6501096374121905,
+          "log_loss": 0.27991743023243304
+        },
+        "named_pairs_5": {
+          "ap": 0.6643325814795834,
+          "log_loss": 0.275262401717297
+        },
+        "named_pairs_10": {
+          "ap": 0.668262848647713,
+          "log_loss": 0.2737368971717951
+        },
+        "named_pairs_20": {
+          "ap": 0.6694775218207545,
+          "log_loss": 0.27259916330601264
+        }
+      }
+    },
+    "held_specimen_and_subtype_pair": {
+      "specimens": [
+        {
+          "specimen": "Dataset1",
+          "scores": {
+            "baseline": {
+              "ap": 0.4578464140214233,
+              "log_loss": 0.2553570234199092
+            },
+            "named_main": {
+              "ap": 0.5274847992204912,
+              "log_loss": 0.24213978323970184
+            },
+            "named_pairs_5": {
+              "ap": 0.5313409038701371,
+              "log_loss": 0.24151027270418363
+            },
+            "named_pairs_10": {
+              "ap": 0.5152426474652155,
+              "log_loss": 0.24421281220052532
+            },
+            "named_pairs_20": {
+              "ap": 0.4954020155559392,
+              "log_loss": 0.2487356812260799
+            }
+          }
+        },
+        {
+          "specimen": "Dataset2",
+          "scores": {
+            "baseline": {
+              "ap": 0.4793133111566734,
+              "log_loss": 0.31513009018326554
+            },
+            "named_main": {
+              "ap": 0.5142675521369258,
+              "log_loss": 0.29432533240637887
+            },
+            "named_pairs_5": {
+              "ap": 0.5140270589864319,
+              "log_loss": 0.294026899743616
+            },
+            "named_pairs_10": {
+              "ap": 0.5049442664466094,
+              "log_loss": 0.29729345479210517
+            },
+            "named_pairs_20": {
+              "ap": 0.4889073470748064,
+              "log_loss": 0.30049896164993173
+            }
+          }
+        },
+        {
+          "specimen": "Dataset3",
+          "scores": {
+            "baseline": {
+              "ap": 0.48249211391847735,
+              "log_loss": 0.29699669348002017
+            },
+            "named_main": {
+              "ap": 0.5372891201698501,
+              "log_loss": 0.2841262672918758
+            },
+            "named_pairs_5": {
+              "ap": 0.5357624890277487,
+              "log_loss": 0.28251447156758736
+            },
+            "named_pairs_10": {
+              "ap": 0.5175687666073252,
+              "log_loss": 0.28681114074208025
+            },
+            "named_pairs_20": {
+              "ap": 0.5135348971384149,
+              "log_loss": 0.28967740341967024
+            }
+          }
+        },
+        {
+          "specimen": "Dataset4",
+          "scores": {
+            "baseline": {
+              "ap": 0.4993448539147697,
+              "log_loss": 0.3255352722660161
+            },
+            "named_main": {
+              "ap": 0.5464937587599575,
+              "log_loss": 0.31160983781897583
+            },
+            "named_pairs_5": {
+              "ap": 0.5380948416780919,
+              "log_loss": 0.31445735226629984
+            },
+            "named_pairs_10": {
+              "ap": 0.536336147210393,
+              "log_loss": 0.3164393327391761
+            },
+            "named_pairs_20": {
+              "ap": 0.5320704629072153,
+              "log_loss": 0.31886816206054364
+            }
+          }
+        },
+        {
+          "specimen": "Dataset5",
+          "scores": {
+            "baseline": {
+              "ap": 0.5750769272118841,
+              "log_loss": 0.31984135338517455
+            },
+            "named_main": {
+              "ap": 0.599681644374304,
+              "log_loss": 0.3133687978138981
+            },
+            "named_pairs_5": {
+              "ap": 0.6040683203996752,
+              "log_loss": 0.3136686242221302
+            },
+            "named_pairs_10": {
+              "ap": 0.5957475405417502,
+              "log_loss": 0.31478038854095736
+            },
+            "named_pairs_20": {
+              "ap": 0.5796923203344169,
+              "log_loss": 0.3215542438658518
+            }
+          }
+        },
+        {
+          "specimen": "Dataset6",
+          "scores": {
+            "baseline": {
+              "ap": 0.5535447727495174,
+              "log_loss": 0.339042412743204
+            },
+            "named_main": {
+              "ap": 0.5993485742534194,
+              "log_loss": 0.3295889563023159
+            },
+            "named_pairs_5": {
+              "ap": 0.5961239013007669,
+              "log_loss": 0.3297662732752151
+            },
+            "named_pairs_10": {
+              "ap": 0.5973408769875173,
+              "log_loss": 0.33130769885903516
+            },
+            "named_pairs_20": {
+              "ap": 0.592465268980229,
+              "log_loss": 0.3340744794448451
+            }
+          }
+        },
+        {
+          "specimen": "Dataset8",
+          "scores": {
+            "baseline": {
+              "ap": 0.6234140966402639,
+              "log_loss": 0.38638329403310817
+            },
+            "named_main": {
+              "ap": 0.6584198059192469,
+              "log_loss": 0.3818221474739525
+            },
+            "named_pairs_5": {
+              "ap": 0.6586918965064753,
+              "log_loss": 0.3838178717904494
+            },
+            "named_pairs_10": {
+              "ap": 0.6518287285118283,
+              "log_loss": 0.3853711440560757
+            },
+            "named_pairs_20": {
+              "ap": 0.6486054608868779,
+              "log_loss": 0.3868625654367104
+            }
+          }
+        }
+      ],
+      "mean": {
+        "baseline": {
+          "ap": 0.5244332128018584,
+          "log_loss": 0.31975516278724253
+        },
+        "named_main": {
+          "ap": 0.5689978935477421,
+          "log_loss": 0.30814016033529984
+        },
+        "named_pairs_5": {
+          "ap": 0.5683013445384753,
+          "log_loss": 0.3085373950813545
+        },
+        "named_pairs_10": {
+          "ap": 0.559858424824377,
+          "log_loss": 0.3108879959899936
+        },
+        "named_pairs_20": {
+          "ap": 0.5500968246968428,
+          "log_loss": 0.31432449958623326
+        }
+      }
+    },
+    "early_to_later": {
+      "specimens": [
+        {
+          "specimen": "Dataset4",
+          "scores": {
+            "baseline": {
+              "ap": 0.5359883855602853,
+              "log_loss": 0.305331723422197
+            },
+            "named_main": {
+              "ap": 0.6336328982478987,
+              "log_loss": 0.2810791441476613
+            },
+            "named_pairs_5": {
+              "ap": 0.6432935104276564,
+              "log_loss": 0.27826039410804
+            },
+            "named_pairs_10": {
+              "ap": 0.6479596075987831,
+              "log_loss": 0.2765552116054972
+            },
+            "named_pairs_20": {
+              "ap": 0.650302809160006,
+              "log_loss": 0.27535621813210065
+            }
+          }
+        },
+        {
+          "specimen": "Dataset5",
+          "scores": {
+            "baseline": {
+              "ap": 0.6092401505950873,
+              "log_loss": 0.3164920555360807
+            },
+            "named_main": {
+              "ap": 0.6767075340727895,
+              "log_loss": 0.28857837849289414
+            },
+            "named_pairs_5": {
+              "ap": 0.6848067127689854,
+              "log_loss": 0.28600385798504435
+            },
+            "named_pairs_10": {
+              "ap": 0.6880236029351958,
+              "log_loss": 0.28456074629813993
+            },
+            "named_pairs_20": {
+              "ap": 0.6895062468389976,
+              "log_loss": 0.28220971130328565
+            }
+          }
+        },
+        {
+          "specimen": "Dataset6",
+          "scores": {
+            "baseline": {
+              "ap": 0.5824318071656376,
+              "log_loss": 0.35945949257235243
+            },
+            "named_main": {
+              "ap": 0.6674399646249934,
+              "log_loss": 0.31044267543729953
+            },
+            "named_pairs_5": {
+              "ap": 0.6766507180504988,
+              "log_loss": 0.3066293822378971
+            },
+            "named_pairs_10": {
+              "ap": 0.6771947886022458,
+              "log_loss": 0.3055954584582349
+            },
+            "named_pairs_20": {
+              "ap": 0.6779206112963695,
+              "log_loss": 0.3037668320766446
+            }
+          }
+        },
+        {
+          "specimen": "Dataset8",
+          "scores": {
+            "baseline": {
+              "ap": 0.6441739339064382,
+              "log_loss": 0.42771300902555437
+            },
+            "named_main": {
+              "ap": 0.7057082587819707,
+              "log_loss": 0.36401107072458044
+            },
+            "named_pairs_5": {
+              "ap": 0.7119421819293084,
+              "log_loss": 0.36090833022780866
+            },
+            "named_pairs_10": {
+              "ap": 0.7142939558640554,
+              "log_loss": 0.35959914975960533
+            },
+            "named_pairs_20": {
+              "ap": 0.7145024814089499,
+              "log_loss": 0.36025214647525716
+            }
+          }
+        }
+      ],
+      "mean": {
+        "baseline": {
+          "ap": 0.5929585693068621,
+          "log_loss": 0.3522490701390461
+        },
+        "named_main": {
+          "ap": 0.6708721639319131,
+          "log_loss": 0.31102781720060885
+        },
+        "named_pairs_5": {
+          "ap": 0.6791732807941122,
+          "log_loss": 0.3079504911396975
+        },
+        "named_pairs_10": {
+          "ap": 0.68186798875007,
+          "log_loss": 0.3065776415303693
+        },
+        "named_pairs_20": {
+          "ap": 0.6830580371760808,
+          "log_loss": 0.305396226996822
+        }
+      },
+      "rules": [
+        {
+          "source_gene": "syg-2",
+          "target_gene": "cam-1",
+          "coefficient": 0.635206315013599
+        },
+        {
+          "source_gene": "unc-6",
+          "target_gene": "madd-4",
+          "coefficient": -0.6877341017616132
+        },
+        {
+          "source_gene": "unc-6",
+          "target_gene": "nrx-1",
+          "coefficient": -0.40875544056761487
+        },
+        {
+          "source_gene": "clr-1",
+          "target_gene": "sax-3",
+          "coefficient": 0.4360740973493854
+        },
+        {
+          "source_gene": "nrx-1",
+          "target_gene": "cam-1",
+          "coefficient": 0.2874247761747581
+        },
+        {
+          "source_gene": "sax-7",
+          "target_gene": "cam-1",
+          "coefficient": -0.12924632418199633
+        },
+        {
+          "source_gene": "unc-6",
+          "target_gene": "sax-7",
+          "coefficient": 0.818604147805366
+        },
+        {
+          "source_gene": "rig-1",
+          "target_gene": "cam-1",
+          "coefficient": -0.36328598359487646
+        },
+        {
+          "source_gene": "ptp-3",
+          "target_gene": "nlg-1",
+          "coefficient": 0.5342609103381435
+        },
+        {
+          "source_gene": "bam-2",
+          "target_gene": "casy-1",
+          "coefficient": -0.3401140147199957
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "source_gene": "syg-2",
+      "target_gene": "cam-1",
+      "selected_folds": 7,
+      "positive_folds": 7,
+      "negative_folds": 0,
+      "mean_coefficient": 1.0455541726942184
+    },
+    {
+      "source_gene": "unc-6",
+      "target_gene": "madd-4",
+      "selected_folds": 7,
+      "positive_folds": 0,
+      "negative_folds": 7,
+      "mean_coefficient": -0.6190845964907515
+    },
+    {
+      "source_gene": "unc-6",
+      "target_gene": "nrx-1",
+      "selected_folds": 7,
+      "positive_folds": 0,
+      "negative_folds": 7,
+      "mean_coefficient": -0.5305934095707175
+    },
+    {
+      "source_gene": "nrx-1",
+      "target_gene": "madd-4",
+      "selected_folds": 7,
+      "positive_folds": 7,
+      "negative_folds": 0,
+      "mean_coefficient": 0.4911737348001194
+    },
+    {
+      "source_gene": "ncam-1",
+      "target_gene": "ncam-1",
+      "selected_folds": 7,
+      "positive_folds": 0,
+      "negative_folds": 7,
+      "mean_coefficient": -0.4398313832134138
+    },
+    {
+      "source_gene": "sax-7",
+      "target_gene": "cam-1",
+      "selected_folds": 7,
+      "positive_folds": 0,
+      "negative_folds": 7,
+      "mean_coefficient": -0.3384460728121117
+    },
+    {
+      "source_gene": "unc-6",
+      "target_gene": "cam-1",
+      "selected_folds": 7,
+      "positive_folds": 3,
+      "negative_folds": 4,
+      "mean_coefficient": 0.06486531208842553
+    },
+    {
+      "source_gene": "ncam-1",
+      "target_gene": "rig-1",
+      "selected_folds": 5,
+      "positive_folds": 0,
+      "negative_folds": 5,
+      "mean_coefficient": -0.6617572024634384
+    },
+    {
+      "source_gene": "unc-6",
+      "target_gene": "sax-7",
+      "selected_folds": 4,
+      "positive_folds": 4,
+      "negative_folds": 0,
+      "mean_coefficient": 1.0120031857348115
+    },
+    {
+      "source_gene": "ncam-1",
+      "target_gene": "cam-1",
+      "selected_folds": 4,
+      "positive_folds": 0,
+      "negative_folds": 4,
+      "mean_coefficient": -0.33226191274766914
+    },
+    {
+      "source_gene": "rig-1",
+      "target_gene": "casy-1",
+      "selected_folds": 2,
+      "positive_folds": 0,
+      "negative_folds": 2,
+      "mean_coefficient": -0.5560774986358497
+    },
+    {
+      "source_gene": "nrx-1",
+      "target_gene": "sax-3",
+      "selected_folds": 2,
+      "positive_folds": 2,
+      "negative_folds": 0,
+      "mean_coefficient": 0.16653786637473672
+    },
+    {
+      "source_gene": "bam-2",
+      "target_gene": "casy-1",
+      "selected_folds": 1,
+      "positive_folds": 0,
+      "negative_folds": 1,
+      "mean_coefficient": -0.6196228062942086
+    },
+    {
+      "source_gene": "unc-6",
+      "target_gene": "syg-1",
+      "selected_folds": 1,
+      "positive_folds": 0,
+      "negative_folds": 1,
+      "mean_coefficient": -0.3617493049389505
+    },
+    {
+      "source_gene": "rig-3",
+      "target_gene": "bam-2",
+      "selected_folds": 1,
+      "positive_folds": 1,
+      "negative_folds": 0,
+      "mean_coefficient": 0.35196697742854516
+    },
+    {
+      "source_gene": "madd-4",
+      "target_gene": "ncam-1",
+      "selected_folds": 1,
+      "positive_folds": 0,
+      "negative_folds": 1,
+      "mean_coefficient": -0.27954753966030954
+    }
+  ],
+  "adult_motifs": {
+    "observed": {
+      "reciprocal": 116,
+      "divergent": 3097,
+      "convergent": 3482,
+      "feedforward": 1478
+    },
+    "baseline": {
+      "reciprocal": 179,
+      "divergent": 2762,
+      "convergent": 3857,
+      "feedforward": 1628
+    },
+    "named_pairs_10": {
+      "reciprocal": 142,
+      "divergent": 3110,
+      "convergent": 3935,
+      "feedforward": 1690
+    }
+  },
+  "adult_edge_overlap": {
+    "observed": 658,
+    "baseline": 403,
+    "named_pairs_10": 437
+  }
+}

@@ -6,6 +6,8 @@ Can a compact, shared developmental program grow circuitry with reproducible spa
 
 A held-out analysis asks whether late-embryonic gene expression improves the prediction of chemical synapses among physically touching *C. elegans* neurons. It compares the same regularized connection rule under contact-only, cell-type, and expression inputs. [Results](https://statsleelab.github.io/developmental-unfolding/connectome.html) · [Data and reproduction](CONNECTOME.md)
 
+A follow-up reproduces the published innexin model and tests small sets of named gene-pair rules for directed chemical synapses. It compares transfer to held-out animals, novel subtype pairings, and later ages. [Named-rule results](https://statsleelab.github.io/developmental-unfolding/wiring-rules.html) · [Methods and interpretation](WIRING_RULES.md)
+
 ## Local differentiation and developmental wiring
 
 One uncommitted cell expands into neighboring vacancies. A bounded internal regulator receives signals from its four immediate neighbors. Positive feedback and a commitment threshold produce two model cell types. Committed cells form nearby signed connections throughout growth under a local degree limit. Edge activity traces determine whether older weakly used edges are pruned. The simulation records the progression from one cell through commitment and wiring.

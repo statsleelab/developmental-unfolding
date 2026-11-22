@@ -1,0 +1,228 @@
+{
+  "source": "https://doi.org/10.5281/zenodo.4027588",
+  "archive_sha256": "39092151a16d82f23d51371638db4871b8f24828c8f8ddd2ee20764a5c1ca92c",
+  "paper": "https://doi.org/10.1073/pnas.2009093117",
+  "alpha": 0.215,
+  "z_threshold": 2.0,
+  "continuous_gcv_minimum_alpha": 0.21730162290047494,
+  "null_iterations": 100,
+  "neurons": 185,
+  "innexin_columns": 18,
+  "off_diagonal_contact_pairs": 5557,
+  "self_contacts": 35,
+  "off_diagonal_gap_junction_pairs": 594,
+  "self_gap_junctions": 7,
+  "cook_positive_candidates": 19,
+  "paper_prior_experimental_interactions": [
+    "inx-19 / inx-19",
+    "unc-9 / unc-9",
+    "inx-10 / inx-11",
+    "inx-3 / inx-3",
+    "inx-6 / inx-6"
+  ],
+  "expression_columns_indistinguishable": [
+    3,
+    11
+  ],
+  "symmetric_null_positive_candidates": 15,
+  "varshney_positive_candidates_same_alpha": 20,
+  "varshney_overlap_with_cook_same_alpha": 11,
+  "maximum_absolute_archive_differences": {
+    "rule_weights": 1.0917239334773399e-12,
+    "null_rule_mean": 9.347800311587662e-13,
+    "null_rule_variance": 3.8441472227646045e-15,
+    "null_edge_probability": 0.0
+  },
+  "candidates": [
+    {
+      "column_a": 4,
+      "column_b": 4,
+      "label_a": "inx-12",
+      "label_b": "inx-12",
+      "weight": 0.38408123971165187,
+      "z": 5.609172319691826,
+      "symmetric_null_z": 3.9662837840979686,
+      "varshney_z_same_alpha": 6.938871589519991
+    },
+    {
+      "column_a": 15,
+      "column_b": 15,
+      "label_a": "inx-9",
+      "label_b": "inx-9",
+      "weight": 0.6402139503450236,
+      "z": 5.002469248288073,
+      "symmetric_null_z": 3.537279928141665,
+      "varshney_z_same_alpha": 5.462550140249328
+    },
+    {
+      "column_a": 8,
+      "column_b": 8,
+      "label_a": "inx-19",
+      "label_b": "inx-19",
+      "weight": 0.1402986271972148,
+      "z": 3.4398536532541732,
+      "symmetric_null_z": 2.4323438445053456,
+      "varshney_z_same_alpha": 4.469424490469307
+    },
+    {
+      "column_a": 2,
+      "column_b": 10,
+      "label_a": "inx-10",
+      "label_b": "inx-3",
+      "weight": 0.745988993799954,
+      "z": 3.408160783007713,
+      "symmetric_null_z": 3.4682730359498715,
+      "varshney_z_same_alpha": 1.651116870151388
+    },
+    {
+      "column_a": 18,
+      "column_b": 18,
+      "label_a": "unc-9",
+      "label_b": "unc-9",
+      "weight": 0.058909804987015285,
+      "z": 3.145427487036285,
+      "symmetric_null_z": 2.224153105813918,
+      "varshney_z_same_alpha": 4.488594767007133
+    },
+    {
+      "column_a": 2,
+      "column_b": 3,
+      "label_a": "inx-10",
+      "label_b": "inx-5 or inx-11",
+      "weight": 0.778022167176885,
+      "z": 3.0245736004857036,
+      "symmetric_null_z": 2.903192012830098,
+      "varshney_z_same_alpha": 1.7961181453377533
+    },
+    {
+      "column_a": 2,
+      "column_b": 11,
+      "label_a": "inx-10",
+      "label_b": "inx-5 or inx-11",
+      "weight": 0.7780221671768837,
+      "z": 3.0245736004857027,
+      "symmetric_null_z": 2.9031920128300976,
+      "varshney_z_same_alpha": 1.7961181453377586
+    },
+    {
+      "column_a": 6,
+      "column_b": 16,
+      "label_a": "inx-17",
+      "label_b": "che-7",
+      "weight": 0.26238341509791274,
+      "z": 2.839377222524224,
+      "symmetric_null_z": 2.801642966467771,
+      "varshney_z_same_alpha": 3.1952693914009407
+    },
+    {
+      "column_a": 5,
+      "column_b": 14,
+      "label_a": "inx-13",
+      "label_b": "inx-8",
+      "weight": 0.32401974132444566,
+      "z": 2.8338446561121424,
+      "symmetric_null_z": 2.810548315051005,
+      "varshney_z_same_alpha": 1.6969103837665016
+    },
+    {
+      "column_a": 10,
+      "column_b": 10,
+      "label_a": "inx-3",
+      "label_b": "inx-3",
+      "weight": 0.2530705615907221,
+      "z": 2.8329945155693155,
+      "symmetric_null_z": 2.0032296330233597,
+      "varshney_z_same_alpha": 6.261912440845029
+    },
+    {
+      "column_a": 4,
+      "column_b": 14,
+      "label_a": "inx-12",
+      "label_b": "inx-8",
+      "weight": 0.261846576260941,
+      "z": 2.57275379489724,
+      "symmetric_null_z": 2.5772899890812475,
+      "varshney_z_same_alpha": 1.8495557271703387
+    },
+    {
+      "column_a": 12,
+      "column_b": 12,
+      "label_a": "inx-6",
+      "label_b": "inx-6",
+      "weight": 0.27828976893964485,
+      "z": 2.467110184933005,
+      "symmetric_null_z": 1.7445103417005254,
+      "varshney_z_same_alpha": 0.955452454994976
+    },
+    {
+      "column_a": 6,
+      "column_b": 15,
+      "label_a": "inx-17",
+      "label_b": "inx-9",
+      "weight": 0.33318713484379653,
+      "z": 2.454679809987415,
+      "symmetric_null_z": 2.4739282554177198,
+      "varshney_z_same_alpha": 2.54003933951851
+    },
+    {
+      "column_a": 7,
+      "column_b": 12,
+      "label_a": "inx-18",
+      "label_b": "inx-6",
+      "weight": 0.2189676090766141,
+      "z": 2.4156811144334593,
+      "symmetric_null_z": 2.411036895008604,
+      "varshney_z_same_alpha": 2.110972368747764
+    },
+    {
+      "column_a": 5,
+      "column_b": 5,
+      "label_a": "inx-13",
+      "label_b": "inx-13",
+      "weight": 0.22157419817848917,
+      "z": 2.399752408634511,
+      "symmetric_null_z": 1.696881201314214,
+      "varshney_z_same_alpha": 4.444048387161274
+    },
+    {
+      "column_a": 5,
+      "column_b": 6,
+      "label_a": "inx-13",
+      "label_b": "inx-17",
+      "weight": 0.5202881221615624,
+      "z": 2.361927372259613,
+      "symmetric_null_z": 2.3227964984545726,
+      "varshney_z_same_alpha": 0.10211430745322544
+    },
+    {
+      "column_a": 13,
+      "column_b": 13,
+      "label_a": "inx-7",
+      "label_b": "inx-7",
+      "weight": 0.08971851688243934,
+      "z": 2.3588980029233935,
+      "symmetric_null_z": 1.6679927739945355,
+      "varshney_z_same_alpha": 3.7802201239524265
+    },
+    {
+      "column_a": 2,
+      "column_b": 9,
+      "label_a": "inx-10",
+      "label_b": "inx-2",
+      "weight": 0.6551037495954383,
+      "z": 2.093461216313007,
+      "symmetric_null_z": 2.1006797813782896,
+      "varshney_z_same_alpha": 2.0721687528317445
+    },
+    {
+      "column_a": 1,
+      "column_b": 7,
+      "label_a": "inx-1",
+      "label_b": "inx-18",
+      "weight": 0.15434818599472538,
+      "z": 2.004776217139199,
+      "symmetric_null_z": 1.9844103747290684,
+      "varshney_z_same_alpha": 1.5161393574101047
+    }
+  ]
+}

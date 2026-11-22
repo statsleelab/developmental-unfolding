@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2e9">
+  <meta name="description" content="An evaluation of named source and target gene-expression terms for predicting chemical synapses among touching C. elegans neurons.">
+  <title>Named Wiring Rules · Developmental Unfolding</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="development.css">
+  <script src="wiring-rules.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="site-name" href="index.html">Developmental Unfolding</a>
+      <nav aria-label="Report sections" style="flex-wrap:wrap">
+        <a href="#results">Prediction</a>
+        <a href="#rules">Gene pairs</a>
+        <a href="#motifs">Motifs</a>
+        <a href="connectome.html">Earlier study</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <section class="intro" aria-labelledby="title">
+      <div class="intro-title"><h1 id="title">Which gene pairs help predict synapses?</h1></div>
+      <div class="abstract">
+        <p>Take two touching <i>C. elegans</i> neurons and ask whether the first forms a chemical synapse onto the second. A source gene A × target gene B term multiplies A's expression in the source by B's expression in the target. That gives the model a way to score their combination alongside physical contact and broad neuron type.</p>
+        <p>All evaluations use the same late-embryonic expression profile for each neuron subtype. The post-hatching specimens provide contact and synapse measurements.</p>
+      </div>
+    </section>
+
+    <section class="results" id="results" aria-labelledby="results-heading">
+      <h2 id="results-heading">Prediction on held-out specimens</h2>
+      <p id="wiring-status" class="data-status" role="status">Loading wiring-rule results…</p>
+      <noscript><p class="data-status">Use the <a href="wiring-rules-results.json">results JSON</a> for model scores and gene-pair selections.</p></noscript>
+      <div id="prediction-content" hidden>
+        <div class="result-grid">
+          <div class="chart-card learning-card" aria-labelledby="prediction-table-heading">
+            <div class="chart-heading">
+              <h3 id="prediction-table-heading">Held-out model scores</h3>
+              <p id="split-description" aria-live="polite"></p>
+            </div>
+            <label for="wiring-split" class="method-caption" style="display:block;margin-top:.8rem">Validation split</label>
+            <select id="wiring-split" style="max-width:100%;padding:.5rem;border:1px solid var(--border);border-radius:.3rem;background:var(--paper);color:var(--ink);font:inherit"></select>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable mean score table">
+              <table>
+                <caption>Means across test specimens. Higher average precision and lower log loss indicate better prediction.</caption>
+                <thead><tr><th scope="col">Model terms</th><th scope="col">Average precision</th><th scope="col">Log loss</th></tr></thead>
+                <tbody id="wiring-scores"></tbody>
+              </table>
+            </div>
+            <details>
+              <summary>Compare scores for individual specimens</summary>
+              <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable specimen score table">
+                <table>
+                  <caption>Baseline and model with 10 selected gene pairs.</caption>
+                  <thead><tr><th scope="col">Specimen</th><th scope="col">Baseline AP</th><th scope="col">10 pairs AP</th><th scope="col">Baseline loss</th><th scope="col">10 pairs loss</th></tr></thead>
+                  <tbody id="specimen-scores"></tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+          <aside class="contrast-card" aria-labelledby="wiring-comparison-heading">
+            <h3 id="wiring-comparison-heading">Ten-pair model contrasts</h3>
+            <p>Each value is the score of the 10-pair model minus that of the comparison model.</p>
+            <div class="contrast-item" aria-live="polite">
+              <h4>Compared with contact and type</h4>
+              <dl id="baseline-contrast" class="info-list"></dl>
+            </div>
+            <div class="contrast-item" aria-live="polite">
+              <h4>Compared with individual gene terms</h4>
+              <dl id="main-contrast" class="info-list"></dl>
+            </div>
+          </aside>
+        </div>
+      </div>
+      <div class="downloads" aria-label="Experiment downloads">
+        <a href="wiring-rules-results.json" download>Results JSON</a>
+        <a href="wiring-rules.png" download>Scientific figure PNG</a>
+      </div>
+    </section>
+
+    <section class="methods" id="rules" aria-labelledby="rules-heading">
+      <h2 id="rules-heading">Gene pairs for follow-up</h2>
+      <div class="interpretation">
+        <p>Pairs are ranked by how often the 10-pair model selected them across the specimen-only folds. The sign shows whether a selected interaction raised or lowered the model's synapse score, holding its other terms fixed. Repeated selection nominates a candidate for further study.</p>
+      </div>
+      <div id="rules-content" hidden>
+        <dl id="panel-summary" class="info-list interpretation"></dl>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable gene-pair table">
+          <table>
+            <caption id="rules-caption">Selection and coefficient signs across the specimen-only folds.</caption>
+            <thead><tr><th scope="col">Source × target gene</th><th scope="col">Selected</th><th scope="col">Positive</th><th scope="col">Negative</th></tr></thead>
+            <tbody id="wiring-rules"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="methods" id="motifs" aria-labelledby="motifs-heading">
+      <h2 id="motifs-heading">Adult wiring motifs</h2>
+      <div class="interpretation">
+        <p>Compare recurring arrangements of directed synapses in the observed adult network (Dataset8) with patterns from the baseline and the 10-pair model. Each prediction uses the highest-scoring held-out connections up to the observed adult edge count.</p>
+      </div>
+      <div class="table-scroll" id="motifs-content" tabindex="0" role="region" aria-label="Scrollable adult motif table" hidden>
+        <table>
+          <caption>Motif counts at the observed adult edge count.</caption>
+          <thead><tr><th scope="col">Motif</th><th scope="col">Observed</th><th scope="col">Baseline</th><th scope="col">10 pairs</th></tr></thead>
+          <tbody id="wiring-motifs"></tbody>
+        </table>
+      </div>
+      <details>
+        <summary>How the motifs are counted</summary>
+        <div class="interpretation">
+          <p>Reciprocal pairs have connections in both directions. Divergent and convergent pairs share a source and a target, respectively. Feedforward triangles count A → B, B → C, and A → C arrangements. Extra reverse links can coexist with a motif.</p>
+        </div>
+      </details>
+      <figure class="chart-card learning-card" style="margin-top:1.5rem">
+        <a href="wiring-rules.png"><img class="learning-figure" src="wiring-rules.png" alt="Average precision by model across validation splits and relative differences from adult motif counts. The tables provide numerical values." loading="lazy"></a>
+        <figcaption class="method-caption">Prediction scores by validation split and a descriptive comparison of adult wiring motifs.</figcaption>
+      </figure>
+    </section>
+
+    <section class="methods" id="methods" aria-labelledby="methods-heading">
+      <h2 id="methods-heading">How the comparisons work</h2>
+      <ol class="method-list">
+        <li><h3>Start with contact</h3><p>The assay considers directed pairs among neurons with measured physical contact. The baseline uses contact geometry, developmental order, and broad cell type.</p></li>
+        <li><h3>Add named expression terms</h3><p>Source and target expression values enter as individual terms and selected source–target products. Each fold ranks the products using its training data.</p></li>
+        <li><h3>Test on new specimens</h3><p>One scheme withholds a full specimen. The stricter scheme also withholds the tested subtype pairs in both directions from training. The early-to-later split fits one model per rule budget on earlier specimens and tests each model on later specimens.</p></li>
+      </ol>
+      <div class="interpretation">
+        <h3>Scope of the evidence</h3>
+        <p>The late-embryonic expression lookup is held fixed across evaluations. Age-related differences in the connectomes reflect measured post-hatching anatomy and synapses. The fitted interactions describe predictive associations in these data. Establishing a molecular mechanism would require direct functional evidence.</p>
+        <p><a href="https://github.com/statsleelab/developmental-unfolding/blob/main/WIRING_RULES.md">Methods, data sources, and reproduction instructions</a></p>
+        <p>A separate analysis reproduced candidate innexin pairings. <a href="innexin-reproduction.json">Reproduced candidates</a> · <a href="https://github.com/statsleelab/developmental-unfolding/blob/main/INNEXIN_REPRODUCTION.md">Reproduction methods</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><span>Developmental Unfolding</span><a href="https://github.com/statsleelab/developmental-unfolding">Source repository</a></div></footer>
+</body>
+</html>

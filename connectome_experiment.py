@@ -134,27 +134,35 @@ def contacts(cache: Path, mapping: dict) -> tuple[pd.DataFrame, list[dict]]:
     return pd.concat(specimens, ignore_index=True), coverage
 
 
+def contact_features(data: pd.DataFrame) -> tuple[np.ndarray, np.ndarray]:
+    geometry = data[["log_area", "log_source_area", "log_target_area", "source_contacts",
+                     "target_contacts", "development_order"]].to_numpy()
+    pair_type = pd.get_dummies(data.source_type + ">" + data.target_type, dtype=float).to_numpy()
+    return geometry, np.column_stack((geometry, pair_type))
+
+
 def features(data: pd.DataFrame, profiles: np.ndarray, names: list[str]) -> dict:
     log_expression = np.log1p(1e6 * profiles / profiles.sum(axis=1, keepdims=True))
     variable = np.argsort(-log_expression.var(axis=0), kind="stable")[:256]
     pcs = PCA(n_components=6, svd_solver="full").fit_transform(log_expression[:, variable])
     indices = {name: index for index, name in enumerate(names)}
     source, target = data.source_subtype.map(indices).to_numpy(), data.target_subtype.map(indices).to_numpy()
-    geometry = data[["log_area", "log_source_area", "log_target_area", "source_contacts",
-                     "target_contacts", "development_order"]].to_numpy()
-    pair_type = pd.get_dummies(data.source_type + ">" + data.target_type, dtype=float).to_numpy()
-    typed = np.column_stack((geometry, pair_type))
+    geometry, typed = contact_features(data)
     molecular = np.column_stack((pcs[source], pcs[target], pcs[source] * pcs[target]))
     return {"contact": geometry, "type": typed, "expression": np.column_stack((typed, molecular))}
+
+
+def subtype_pair_folds(data: pd.DataFrame) -> np.ndarray:
+    pairs = [tuple(sorted((a, b))) for a, b in zip(data.source_subtype, data.target_subtype)]
+    unique_pairs = sorted(set(pairs))
+    strata = {pair: group for pair, group in zip(unique_pairs, np.random.default_rng(2026).permutation(len(unique_pairs)) % 5)}
+    return np.asarray([strata[pair] for pair in pairs])
 
 
 def predict(data: pd.DataFrame, designs: dict) -> tuple[dict, dict]:
     labels = data.synapse.to_numpy()
     animals = data.specimen.to_numpy()
-    pairs = [tuple(sorted((a, b))) for a, b in zip(data.source_subtype, data.target_subtype)]
-    unique_pairs = sorted(set(pairs))
-    strata = {pair: group for pair, group in zip(unique_pairs, np.random.default_rng(2026).permutation(len(unique_pairs)) % 5)}
-    fold = np.asarray([strata[pair] for pair in pairs])
+    fold = subtype_pair_folds(data)
     results, predictions = {}, {}
     for scheme in ("held_specimen", "held_specimen_and_subtype_pair"):
         summary, exported = [], {}
@@ -223,26 +231,32 @@ def plot(path: Path, data: pd.DataFrame, scores: dict) -> None:
     plt.close(figure)
 
 
+def dataset(cache: Path) -> tuple[pd.DataFrame, np.ndarray, list[str], dict]:
+    inputs(cache)
+    meta = pd.read_csv(cache / "cell.csv.gz")
+    counts = meta.loc[(meta["embryo.time"] >= MIN_AGE) & meta["passed_initial_QC_or_later_whitelisted"],
+                      "cell.subtype"].value_counts()
+    with pd.ExcelFile(cache / "contact.xlsx") as book:
+        _, kinds = workbook_sheet(book, "Dataset8")
+    mapping = subtype_mapping(kinds, set(counts[counts >= MIN_CELLS].index))
+    names = sorted(set(mapping.values()))
+    data, coverage = contacts(cache, mapping)
+    print(f"Matched {len(mapping)} neurons to {len(names)} profiles; {len(data)} candidate contacts", flush=True)
+    profiles = read_profiles(cache, meta, names)
+    metadata = {"coverage": coverage, "matched_neurons": len(mapping), "expression_profiles": len(names),
+                "expression_cells": int(counts.loc[names].sum())}
+    return data, profiles, names, metadata
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cache", type=Path, default=Path("/tmp/worm-connectome"))
     parser.add_argument("--output", type=Path, default=Path("docs"))
     args = parser.parse_args()
-    inputs(args.cache)
-    meta = pd.read_csv(args.cache / "cell.csv.gz")
-    counts = meta.loc[(meta["embryo.time"] >= MIN_AGE) & meta["passed_initial_QC_or_later_whitelisted"],
-                      "cell.subtype"].value_counts()
-    with pd.ExcelFile(args.cache / "contact.xlsx") as book:
-        _, kinds = workbook_sheet(book, "Dataset8")
-    mapping = subtype_mapping(kinds, set(counts[counts >= MIN_CELLS].index))
-    names = sorted(set(mapping.values()))
-    data, coverage = contacts(args.cache, mapping)
-    print(f"Matched {len(mapping)} neurons to {len(names)} profiles; {len(data)} candidate contacts", flush=True)
-    profiles = read_profiles(args.cache, meta, names)
+    data, profiles, names, metadata = dataset(args.cache)
     results, predictions = predict(data, features(data, profiles, names))
     args.output.mkdir(parents=True, exist_ok=True)
-    payload = {"coverage": coverage, "matched_neurons": len(mapping), "expression_profiles": len(names),
-               "expression_cells": int(counts.loc[names].sum()), "results": results}
+    payload = {**metadata, "results": results}
     (args.output / "connectome-results.json").write_text(json.dumps(payload, indent=2, allow_nan=False) + "\n")
     for scheme, scores in predictions.items():
         for model, values in scores.items():
